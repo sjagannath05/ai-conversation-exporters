@@ -9,19 +9,40 @@ A collection of tools to export conversations from AI coding assistants to beaut
 | [Claude Conversation Exporter](./claude-conversation-exporter/) | Claude Code CLI | **Automatic** (SessionEnd hook) + Manual |
 | [Codex Conversation Exporter](./codex-conversation-exporter/) | OpenAI Codex CLI | **Manual** (skill/CLI) |
 
+### Feature Comparison
+
+| Feature | Claude | Codex |
+|---------|:------:|:-----:|
+| Auto-export on session end | Yes | - |
+| Manual export command | `/export-conversation` | `$codex-export` |
+| Batch export all sessions | Yes | - |
+| Output formats | HTML | MD, HTML, or both |
+| Session resumption tracking | Yes | - |
+| Session index file | Yes | - |
+| Token usage statistics | Yes | Yes |
+| 10 built-in themes | Yes | Yes |
+
 ## Features
 
 Both exporters share a consistent feature set:
 
 - **Beautiful HTML exports** with syntax highlighting and responsive design
-- **Multiple themes** - Dark, Light, Solarized, Monokai, Dracula, Nord, GitHub
+- **10 built-in themes** - Auto, Dark, Light, Solarized, Monokai, Dracula, Nord, GitHub
 - **Dark/Light toggle** - Switch themes with one click (preference saved in browser)
-- **Auto-generated summaries** - Intelligent conversation summarization
+- **Auto-generated summaries** - Intelligent conversation summarization from keywords
 - **Session statistics** - Duration, message counts, token usage, tool breakdown
+- **Per-message token stats** - See input/output tokens on each assistant response
 - **Collapsible tool sections** - See what tools were used without clutter
-- **Print-friendly** - Clean output when printing
-- **Customizable** - Names, labels, emojis, colors, and appearance
+- **Print-friendly** - Clean output when printing (hides interactive elements)
+- **25+ configuration options** - Names, labels, emojis, colors, typography, and more
 - **Central or per-project exports** - Choose where to store conversations
+
+### Claude-Specific Features
+
+- **Session deduplication** - Updates existing exports instead of creating duplicates
+- **Session continuity** - Preserves original creation date when resuming sessions
+- **Batch export** - Export all historical sessions with filtering options
+- **Session index** - Maintains `sessions_index.md` for easy browsing
 
 ## Quick Start
 
@@ -33,6 +54,13 @@ cd claude-conversation-exporter
 ```
 
 Conversations **auto-export** when you exit Claude Code (`Ctrl+C`, `/exit`). You can also manually export anytime with `/export-conversation`.
+
+**Batch export** all historical sessions:
+
+```bash
+python claude-conversation-exporter/export-all-sessions.py --list        # List sessions
+python claude-conversation-exporter/export-all-sessions.py --skip-existing  # Export new only
+```
 
 ### OpenAI Codex CLI
 

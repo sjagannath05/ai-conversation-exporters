@@ -5,7 +5,7 @@ Exports Codex CLI sessions to Markdown and HTML with Claude-style formatting.
 ## Installation
 
 ```bash
-cd /Users/jagannath/Downloads/coding/local_testing/codex-conversation-exporter
+cd codex-conversation-exporter
 ./install.sh
 ```
 
@@ -37,14 +37,32 @@ python3 ~/.codex/skills/codex-export/scripts/export_codex_session.py --latest
 
 Options:
 
-- `--format md|html|both`
-- `--output <dir>`
-- `--session <id|path>`
+| Flag | Description |
+|------|-------------|
+| `--format md\|html\|both` | Output format (default: `html`) |
+| `--output <dir>` | Custom output directory |
+| `--session <id\|path>` | Export specific session by ID or file path |
+| `--latest` | Export most recent session |
 
-Config:
+## Configuration
 
-- `~/.codex/conversation-export-config.json`
-- Customize names, theme, colors, and display toggles
+Edit `~/.codex/conversation-export-config.json` to customize:
+
+```json
+{
+  "user_name": "You",
+  "assistant_name": "Codex",
+  "theme": "auto",
+  "generate_summary": true,
+  "show_statistics": true
+}
+```
+
+### Available Themes
+
+`auto`, `dark`, `light`, `github-dark`, `github-light`, `solarized-dark`, `solarized-light`, `monokai`, `dracula`, `nord`
+
+See the [main README](../README.md) for full configuration options and custom colors
 
 ## Uninstall
 
