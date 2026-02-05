@@ -1,0 +1,52 @@
+{
+  "_comment": "Claude Conversation Exporter Configuration",
+  "_docs": "See README.md for full documentation",
+
+  "_section_names": "=== Display Names ===",
+  "user_name": "You",
+  "assistant_name": "Claude",
+
+  "_section_emojis": "=== Emojis ===",
+  "user_emoji": "👤",
+  "assistant_emoji": "🤖",
+
+  "_section_theme": "=== Appearance ===",
+  "_theme_help": "Options: auto, dark, light, solarized-dark, solarized-light, monokai, github-dark, github-light, dracula, nord",
+  "theme": "auto",
+  "title_format": "{project_name} Conversations",
+  "_custom_colors_help": "Override any theme color. Keys: bg_color, card_bg, user_bg, claude_bg, text_color, text_muted, accent, accent_soft, border_color, code_bg, tool_bg",
+  "custom_colors": null,
+
+  "_section_typography": "=== Typography & Layout ===",
+  "font_size": "16px",
+  "line_height": "1.75",
+  "letter_spacing": "0.01em",
+  "max_width": "920px",
+  "padding": "24px",
+
+  "_section_output": "=== Output Location ===",
+  "_central_export_location_help": "Set to a path like ~/.claude/conversations to collect all exports in one place. Leave null for per-project exports.",
+  "central_export_location": null,
+  "output_dir": "artifacts/conversations",
+
+  "_section_summary": "=== Auto Summary ===",
+  "generate_summary": true,
+
+  "_section_header": "=== Header Visibility ===",
+  "show_summary": true,
+  "show_session_id": true,
+  "show_project_path": true,
+  "show_timestamp": true,
+  "show_statistics": true,
+
+  "_section_content": "=== Content Options ===",
+  "include_thinking": false,
+
+  "_section_limits": "=== Truncation Limits (in characters) ===",
+  "max_tool_result_length": 1000,
+  "max_tool_input_length": 500,
+
+  "_section_datetime": "=== Date/Time Formats (Python strftime) ===",
+  "date_format": "%Y-%m-%d %H:%M:%S",
+  "time_format": "%H:%M:%S"
+}
