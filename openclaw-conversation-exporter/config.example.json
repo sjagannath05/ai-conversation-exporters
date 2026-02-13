@@ -1,0 +1,13 @@
+{
+  "user_name": "You",
+  "assistant_name": "OpenClaw",
+  "user_emoji": "👤",
+  "assistant_emoji": "🤖",
+  "theme": "auto",
+  "generate_summary": true,
+  "show_statistics": true,
+  "include_thinking": false,
+  "central_export_location": "~/openclaw-export",
+  "max_tool_result_length": 1000,
+  "max_tool_input_length": 500
+}

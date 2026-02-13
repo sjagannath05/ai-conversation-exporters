@@ -8,19 +8,21 @@ A collection of tools to export conversations from AI coding assistants to beaut
 |------|--------------|---------------|
 | [Claude Conversation Exporter](./claude-conversation-exporter/) | Claude Code CLI | **Automatic** (SessionEnd hook) + Manual |
 | [Codex Conversation Exporter](./codex-conversation-exporter/) | OpenAI Codex CLI | **Manual** (skill/CLI) |
+| [OpenClaw Conversation Exporter](./openclaw-conversation-exporter/) | OpenClaw Agents | **Manual** + Cron automation |
 
 ### Feature Comparison
 
-| Feature | Claude | Codex |
-|---------|:------:|:-----:|
-| Auto-export on session end | Yes | - |
-| Manual export command | `/export-conversation` | `$codex-export` |
-| Batch export all sessions | Yes | - |
-| Output formats | HTML | MD, HTML, or both |
-| Session resumption tracking | Yes | - |
-| Session index file | Yes | - |
-| Token usage statistics | Yes | Yes |
-| 10 built-in themes | Yes | Yes |
+| Feature | Claude | Codex | OpenClaw |
+|---------|:------:|:-----:|:--------:|
+| Auto-export on session end | Yes | - | Cron |
+| Manual export command | `/export-conversation` | `$codex-export` | `openclaw-export` |
+| Batch export all sessions | Yes | - | Yes |
+| Output formats | HTML | MD, HTML, or both | HTML |
+| Multi-agent support | - | - | Yes |
+| Session resumption tracking | Yes | - | - |
+| Session index file | Yes | - | - |
+| Token usage statistics | Yes | Yes | Yes |
+| 10 built-in themes | Yes | Yes | Auto dark/light |
 
 ## Features
 
